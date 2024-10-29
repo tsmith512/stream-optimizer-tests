@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First Tests</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+  <style>
+    main {
+      max-width: 100%;
+    }
+
+    img, video {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+
+    <h1>Fancy Product Videos</h1>
+
+    <h2>The Journal</h2>
+
+    <article>
+      <header>
+        <hgroup>
+          <h3>Original</h3>
+          <p>This is a 13 second, full HD video that weighs a whopping 34MB.</p>
+        </hgroup>
+      </header>
+
+      <video controls>
+        <source src="https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/journal.mp4" />
+      </video>
+
+      <footer>
+        Lots of customers have videos like these in storage somewhere. Migrating
+        them to Stream and delivering them along with an HLS player library is cumbersome.
+      </footer>
+    </article>
+
+    <h3>Outputs</h3>
+
+    <article>
+      <header>
+        <hgroup>
+          <h4>Optimized</h4>
+          <p>Just the default options returns a 640w at 2.2MB.</p>
+        </hgroup>
+      </header>
+      <video controls>
+        <source src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media//https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/journal.mp4" />
+      </video>
+    </article>
+
+
+    <article>
+      <header>
+        <hgroup>
+          <h4>Still Frames</h4>
+          <p>For use in galleries, search results, etc.</p>
+        </hgroup>
+      </header>
+
+      <div class="grid">
+        <div>
+          <img src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=frame,time=7s,width=500,height=500,fit=clip/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/journal.mp4" />
+          <p>"Clip" scales to maintain aspect ratio, contained within the provided dimensions.</p>
+        </div>
+        <div>
+          <img src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=frame,time=7s,width=500,height=500,fit=crop/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/journal.mp4" />
+          <p>"Crop" scales to maintain aspect ratio to cover, then crops.</p>
+        </div>
+        <div>
+          <img src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=frame,time=7s,width=500,height=500,fit=scale/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/journal.mp4" />
+          <p>"Scale" resizes to fit provided bounds, regardless of input ratio.</p>
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <header>
+        <hgroup>
+          <h4>Transformed Videos</h4>
+          <p>For use on product pages, detail screens, modals, etc.</p>
+        </hgroup>
+      </header>
+      <div class="grid">
+        <div>
+          <video controls>
+            <source src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=video,time=5s,duration=5s,width=500,height=500,fit=crop,audio=false/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/journal.mp4" />
+          </video>
+          <p>5 second, square video, without audio</p>
+        </div>
+        <div>
+          <video controls>
+            <source src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=video,time=5s,duration=5s,width=500,height=1000,fit=crop,audio=true/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/journal.mp4" />
+          </video>
+          <p>5 second, vertical video, with audio</p>
+        </div>
+      </div>
+
+    </article>
+
+    <hr />
+
+    <h2>The Coffee</h2>
+
+    <article>
+      <header>
+        <hgroup>
+          <h3>Original</h3>
+          <p>This is a 8 second, full HD video that weighs a whopping 29MB.</p>
+        </hgroup>
+      </header>
+
+      <video controls>
+        <source src="https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/coffee.mp4" />
+      </video>
+    </article>
+
+    <h3>Outputs</h3>
+
+    <article>
+      <header>
+        <hgroup>
+          <h4>Optimized</h4>
+          <p>Just the default options returns a 640w at 2.2MB.</p>
+        </hgroup>
+      </header>
+      <video controls>
+        <source src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media//https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/coffee.mp4" />
+      </video>
+    </article>
+
+
+    <article>
+      <header>
+        <hgroup>
+          <h4>Still Frames</h4>
+          <p>For use in galleries, search results, etc.</p>
+        </hgroup>
+      </header>
+
+      <div class="grid">
+        <div>
+          <img src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=frame,time=7s,width=500,height=500,fit=clip/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/coffee.mp4" />
+          <p>"Clip" scales to maintain aspect ratio, contained within the provided dimensions.</p>
+        </div>
+        <div>
+          <img src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=frame,time=7s,width=500,height=500,fit=crop/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/coffee.mp4" />
+          <p>"Crop" scales to maintain aspect ratio to cover, then crops.</p>
+        </div>
+        <div>
+          <img src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=frame,time=7s,width=500,height=500,fit=scale/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/coffee.mp4" />
+          <p>"Scale" resizes to fit provided bounds, regardless of input ratio.</p>
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <header>
+        <hgroup>
+          <h4>Transformed Videos</h4>
+          <p>For use on product pages, detail screens, modals, etc.</p>
+        </hgroup>
+      </header>
+      <div class="grid">
+        <div>
+          <video controls>
+            <source src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=video,time=5s,duration=5s,width=500,height=500,fit=crop,audio=false/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/coffee.mp4" />
+          </video>
+          <p>5 second, square video, without audio</p>
+        </div>
+        <div>
+          <video controls>
+            <source src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=video,time=5s,duration=5s,width=500,height=1000,fit=crop,audio=true/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/coffee.mp4" />
+          </video>
+          <p>5 second, vertical video, with audio</p>
+        </div>
+      </div>
+
+    </article>
+
+
+  </main>
+</body>
+</html>
