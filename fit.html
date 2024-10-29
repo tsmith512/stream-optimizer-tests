@@ -42,7 +42,7 @@
 
       <div class="grid">
         <div>
-          <img src="/cdn-cgi/image/width=500,height=500,fit=scale-down/img/vert.jpg" />
+          <img src="/cdn-cgi/image/width=500,height=500,fit=scale-down/img/horiz.jpg" />
           <p>
             "contain" and "scale-down" scales to maintain aspect ratio, fully contained within the output dimension(s).
             Thus the processed output may be smaller on one dimenion than provided dimenions.
@@ -50,19 +50,18 @@
           </p>
         </div>
         <div>
-          <img src="/cdn-cgi/image/width=500,height=500,fit=cover/img/vert.jpg" />
+          <img src="/cdn-cgi/image/width=500,height=500,fit=cover/img/horiz.jpg" />
           <p>
             "cover" scales to maintain aspect ratio to, fully covering the output dimenisons, then crops the remaining area.
             Thus the processed output will always match both provided dimensions.
           </p>
         </div>
       </div>
-      <div class="grid">
-        <div>
-          <img src="/cdn-cgi/image/width=500,height=500/img/vert.jpg" />
-          <p>"Scale" resizes to fit provided bounds, regardless of input ratio.</p>
-        </div>
-      </div>
+
+      <ul>
+        <li>"crop" acts like "scale-down" or "cover" depending on the size</li>
+        <li>"pad" acts like "scale-down" then applies a letterbox background</li>
+      </ul>
     </article>
 
     <article>
@@ -70,6 +69,22 @@
         <h2>Vertical Input</h2>
       </hgroup>
       <img src="/img/vert.jpg" />
+
+      <div class="grid">
+        <div>
+          <img src="/cdn-cgi/image/width=500,height=500,fit=scale-down/img/vert.jpg" />
+          <p>
+            "scale-down"
+          </p>
+        </div>
+        <div>
+          <img src="/cdn-cgi/image/width=500,height=500,fit=cover/img/vert.jpg" />
+          <p>
+            "cover"
+          </p>
+        </div>
+      </div>
+
     </article>
   </main>
 </body>
