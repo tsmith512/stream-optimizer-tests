@@ -16,6 +16,19 @@
       max-width: 100%;
       height: auto;
     }
+
+    .sq {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 100%;
+    }
+
+    .sq > img {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   </style>
 </head>
 <body>
@@ -36,13 +49,16 @@
       <hgroup>
         <h2>Horizontal Input</h2>
       </hgroup>
+
       <img src="/img/horiz.jpg" />
 
       <h3>Square Output</h3>
 
       <div class="grid">
         <div>
-          <img src="/cdn-cgi/image/width=500,height=500,fit=scale-down/img/horiz.jpg" />
+          <div class="sq">
+            <img src="/cdn-cgi/image/width=500,height=500,fit=scale-down/img/horiz.jpg" />
+          </div>
           <p>
             "contain" and "scale-down" scales to maintain aspect ratio, fully contained within the output dimension(s).
             Thus the processed output may be smaller on one dimenion than provided dimenions.
@@ -50,7 +66,9 @@
           </p>
         </div>
         <div>
-          <img src="/cdn-cgi/image/width=500,height=500,fit=cover/img/horiz.jpg" />
+          <div class="sq">
+            <img src="/cdn-cgi/image/width=500,height=500,fit=cover/img/horiz.jpg" />
+          </div>
           <p>
             "cover" scales to maintain aspect ratio to, fully covering the output dimenisons, then crops the remaining area.
             Thus the processed output will always match both provided dimensions.
@@ -72,13 +90,17 @@
 
       <div class="grid">
         <div>
-          <img src="/cdn-cgi/image/width=500,height=500,fit=scale-down/img/vert.jpg" />
+          <div class="sq">
+            <img src="/cdn-cgi/image/width=500,height=500,fit=scale-down/img/vert.jpg" />
+          </div>
           <p>
             "scale-down"
           </p>
         </div>
         <div>
-          <img src="/cdn-cgi/image/width=500,height=500,fit=cover/img/vert.jpg" />
+          <div class="sq">
+            <img src="/cdn-cgi/image/width=500,height=500,fit=cover/img/vert.jpg" />
+          </div>
           <p>
             "cover"
           </p>
