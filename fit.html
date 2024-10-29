@@ -42,13 +42,22 @@
 
       <div class="grid">
         <div>
-          <img src="/cdn-cgi/image/width=500,height=500/img/vert.jpg" />
-          <p>"Clip" scales to maintain aspect ratio, contained within the provided dimensions.</p>
+          <img src="/cdn-cgi/image/width=500,height=500,fit=scale-down/img/vert.jpg" />
+          <p>
+            "contain" and "scale-down" scales to maintain aspect ratio, fully contained within the output dimension(s).
+            Thus the processed output may be smaller on one dimenion than provided dimenions.
+            "contain" will allow upscaling where "scale-down" will only reduce size.
+          </p>
         </div>
         <div>
-          <img src="/cdn-cgi/image/width=500,height=500/img/vert.jpg" />
-          <p>"Crop" scales to maintain aspect ratio to cover, then crops.</p>
+          <img src="/cdn-cgi/image/width=500,height=500,fit=cover/img/vert.jpg" />
+          <p>
+            "cover" scales to maintain aspect ratio to, fully covering the output dimenisons, then crops the remaining area.
+            Thus the processed output will always match both provided dimensions.
+          </p>
         </div>
+      </div>
+      <div class="grid">
         <div>
           <img src="/cdn-cgi/image/width=500,height=500/img/vert.jpg" />
           <p>"Scale" resizes to fit provided bounds, regardless of input ratio.</p>
