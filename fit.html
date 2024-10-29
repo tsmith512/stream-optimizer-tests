@@ -79,21 +79,17 @@
           <div class="sq">
             <img src="/cdn-cgi/image/width=500,height=500,fit=scale-down/img/horiz.jpg" />
           </div>
-          <p>
-            Scales, maintaining aspect ratio, to fully contain within the output dimension(s).
-            Output may be smaller on one dimension than requested.
-            "contain" will upscale if necessary, where "scale-down" will only reduce size.
-          </p>
+          <p>Scales, maintaining aspect ratio, to fully contain within the output dimension(s).</p>
+          <p>Output may be smaller on one dimension than requested.</p>
+          <p>"contain" will upscale if necessary, where "scale-down" will only reduce size.</p>
         </div>
         <div>
           <p>"cover"</p>
           <div class="sq">
             <img src="/cdn-cgi/image/width=500,height=500,fit=cover/img/horiz.jpg" />
           </div>
-          <p>
-            Scales, maintaining aspect ratio, to fully cover the output dimenisons, then crops the remaining area.
-            Thus the processed output will always match both provided dimensions.
-          </p>
+          <p>Scales, maintaining aspect ratio, to fully cover the output dimenisons, then crops the remaining area.</p>
+          <p>Thus the processed output will always match both provided dimensions.</p>
         </div>
       </div>
 
@@ -117,14 +113,6 @@
           </p>
         </div>
       </div>
-
-
-      <h3>Notes</h3>
-
-      <ul>
-        <li>"crop" acts like "scale-down" or "cover" depending on the size</li>
-        <li>"pad" acts like "scale-down" then applies a letterbox background</li>
-      </ul>
     </article>
 
     <article>
@@ -177,6 +165,64 @@
           </p>
         </div>
       </div>
+
+    </article>
+
+    <article>
+      <hgroup>
+        <h2>Notes and Next Steps</h2>
+        <p>Clarifications and how to finish out Milestone 1's transformation flags</p>
+      </hgroup>
+
+      <h3>Clarifications</h3>
+
+      <ul>
+        <li><strong>Image Resizing does not offer any mechanism to stretch the input.</strong> We should mirror this.</li>
+        <li>Special fit options:
+          <ul>
+            <li>"crop" acts like "cover" but it will not upscale, so it behaves like "scale-down" for larger images.</li>
+            <li>"pad" acts like "scale-down" then applies a letterbox background background.</li>
+          </ul>
+        </li>
+        <li>Other noteworthy options:
+          <ul>
+            <li>"gravity" anchors any cropping to center on a focus area either by automatic detection or coordinates.</li>
+            <li>"trim" allows cropping by specifying offsets from each edge.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Next Steps</h3>
+
+      <ol>
+        <li>Eliminate "clip". It was never defined and the term is already overloaded in our ecosystem.</li>
+        <li>Rename "crop" to "cover" and confirm behavior &mdash; this seems to be what crop is alerady doing.</li>
+        <li>Rename "scale" to "contain" and avoid stretching output content</li>
+        <li>Lower priority asks:
+          <ul>
+            <li>Add "scale-down" to "contain" without upscaling.</li>
+            <li>Add "crop" to "cover" without upscaling</li>
+          </ul>
+        </li>
+        <li>Out of scope:
+          <ul>
+            <li>Not now:
+              <ul>
+                <li>We will not support "trim" in the initial release.</li>
+                <li>We will not support "gravity" by coordinate weight in the initial release.</li>
+              </ul>
+            </li>
+            <li>Not at all: *
+              <ul>
+                <li>We will not support "pad" at all.</li>
+                <li>We will not support "gravity" by automatic or tracking selection.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+      <p><small><em>* You know how this goes. But not without a key account.</em></small></p>
 
     </article>
   </main>
