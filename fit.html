@@ -22,7 +22,7 @@
       width: 100%;
       height: 0;
       padding-bottom: 100%;
-      border: 1px solid #CCC;
+      box-shadow: 0px 0px 1px #000;
     }
 
     .sq > img {
@@ -55,25 +55,29 @@
 
       <img src="/img/horiz.jpg" />
 
+      <hr />
+
       <h3>Square Output</h3>
 
       <div class="grid">
         <div>
+          <p>"contain" or "scale-down"</p>
           <div class="sq">
             <img src="/cdn-cgi/image/width=500,height=500,fit=scale-down/img/horiz.jpg" />
           </div>
           <p>
-            "contain" and "scale-down" scales to maintain aspect ratio, fully contained within the output dimension(s).
-            Thus the processed output may be smaller on one dimenion than provided dimenions.
-            "contain" will allow upscaling where "scale-down" will only reduce size.
+            Scales, maintaining aspect ratio, to fully contain within the output dimension(s).
+            Output may be smaller on one dimension than requested.
+            "contain" will upscale if necessary, where "scale-down" will only reduce size.
           </p>
         </div>
         <div>
+          <p>"cover"</p>
           <div class="sq">
             <img src="/cdn-cgi/image/width=500,height=500,fit=cover/img/horiz.jpg" />
           </div>
           <p>
-            "cover" scales to maintain aspect ratio to, fully covering the output dimenisons, then crops the remaining area.
+            Scales, maintaining aspect ratio, to fully cover the output dimenisons, then crops the remaining area.
             Thus the processed output will always match both provided dimensions.
           </p>
         </div>
@@ -89,23 +93,26 @@
       <hgroup>
         <h2>Vertical Input</h2>
       </hgroup>
+
       <img src="/img/vert.jpg" />
+
+      <hr />
 
       <div class="grid">
         <div>
+          "scale-down"
           <div class="sq">
             <img src="/cdn-cgi/image/width=500,height=500,fit=scale-down/img/vert.jpg" />
           </div>
           <p>
-            "scale-down"
           </p>
         </div>
         <div>
+          "cover"
           <div class="sq">
             <img src="/cdn-cgi/image/width=500,height=500,fit=cover/img/vert.jpg" />
           </div>
           <p>
-            "cover"
           </p>
         </div>
       </div>
