@@ -20,16 +20,45 @@
 </head>
 <body>
   <main class="container">
+    <h1>Fit Options</h1>
     <article>
       <hgroup>
-        <h2>Horizontal</h2>
+        <h2>Overview</h2>
+      </hgroup>
+      <p>
+        The most common use of the media transformation endpoint is to resize
+        an original asset to match new dimensions. In many cases, the output
+        dimensions will not match the input aspect ratio. Here is a sample of
+        the current behavior of the image transformation endpoint.
+      </p>
+    </article>
+    <article>
+      <hgroup>
+        <h2>Horizontal Input</h2>
       </hgroup>
       <img src="/img/horiz.jpg" />
+
+      <h3>Square Output</h3>
+
+      <div class="grid">
+        <div>
+          <img src="/cdn-cgi/image/width=500,height=500/img/vert.jpg" />
+          <p>"Clip" scales to maintain aspect ratio, contained within the provided dimensions.</p>
+        </div>
+        <div>
+          <img src="/cdn-cgi/image/width=500,height=500/img/vert.jpg" />
+          <p>"Crop" scales to maintain aspect ratio to cover, then crops.</p>
+        </div>
+        <div>
+          <img src="/cdn-cgi/image/width=500,height=500/img/vert.jpg" />
+          <p>"Scale" resizes to fit provided bounds, regardless of input ratio.</p>
+        </div>
+      </div>
     </article>
 
     <article>
       <hgroup>
-        <h2>Vertical</h2>
+        <h2>Vertical Input</h2>
       </hgroup>
       <img src="/img/vert.jpg" />
     </article>
