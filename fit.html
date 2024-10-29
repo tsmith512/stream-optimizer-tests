@@ -17,15 +17,20 @@
       height: auto;
     }
 
-    .sq {
+    .sq, .h, .v {
       position: relative;
       width: 100%;
       height: 0;
-      padding-bottom: 100%;
       box-shadow: 0px 0px 1px #000;
     }
 
-    .sq > img {
+    .sq { padding-bottom: 100%; }
+    .h { padding-bottom: 33%; }
+    .v { padding-bottom: 150%; }
+
+    .sq > img,
+    .h > img,
+    .v > img {
       max-height: 100%;
       position: absolute;
       top: 50%;
@@ -83,6 +88,8 @@
         </div>
       </div>
 
+      <h3>Notes</h3>
+
       <ul>
         <li>"crop" acts like "scale-down" or "cover" depending on the size</li>
         <li>"pad" acts like "scale-down" then applies a letterbox background</li>
@@ -98,6 +105,8 @@
 
       <hr />
 
+      <h3>Square Output</h3>
+
       <div class="grid">
         <div>
           "scale-down"
@@ -111,6 +120,27 @@
           "cover"
           <div class="sq">
             <img src="/cdn-cgi/image/width=500,height=500,fit=cover/img/vert.jpg" />
+          </div>
+          <p>
+          </p>
+        </div>
+      </div>
+
+      <h3>Horizontal Output</h3>
+
+      <div class="grid">
+        <div>
+          "scale-down"
+          <div class="h">
+            <img src="/cdn-cgi/image/width=900,height=300,fit=scale-down/img/vert.jpg" />
+          </div>
+          <p>
+          </p>
+        </div>
+        <div>
+          "cover"
+          <div class="h">
+            <img src="/cdn-cgi/image/width=900,height=300,fit=cover/img/vert.jpg" />
           </div>
           <p>
           </p>
