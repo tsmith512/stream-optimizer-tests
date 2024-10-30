@@ -22,19 +22,19 @@
       </ul>
     </nav>
 
-    <h1>Image Fit Options</h1>
+    <h1>Crop</h1>
     <article>
       <hgroup>
-        <h2>Overview</h2>
+        <h2>What is Crop?</h2>
+        <p><em>From Images Developer Docs</em></p>
       </hgroup>
-      <p>
-        The most common use of the media transformation endpoint is to resize
-        an original asset to match new dimensions. In many cases, the output
-        dimensions will not match the input aspect ratio. Here is a sample of
-        the current behavior of the image transformation endpoint.
-      </p>
+      <p>Downscales and crops an image to fit within the specified dimensions. This will never upscale the image beyond its original size.</p>
+
+      <p>If the original image is smaller than the specified width or height dimensions, then it will remain the same size and maintain its original aspect ratio (like the scale-down option). </p>
+
+      <p>If the original image is larger than the specified width or height dimensions, then it will resize to fit the entire area and match the aspect ratio of the specified dimensions (like the cover option).</p>
     </article>
-    <article class="narrow">
+    <article>
       <hgroup>
         <h2>Horizontal Input</h2>
       </hgroup>
@@ -43,25 +43,26 @@
 
       <hr />
 
-      <h3>Square Output</h3>
+      <h3>Crop samples</h3>
 
       <div class="grid">
         <div>
-          <p>"contain" or "scale-down"</p>
+          <p>300x200</p>
           <div class="sq">
-            <img src="/cdn-cgi/image/width=500,height=500,fit=scale-down/img/horiz.jpg" />
+            <img src="/cdn-cgi/image/width=300,height=200,fit=crop/img/horiz.jpg" />
           </div>
-          <p>Scales, maintaining aspect ratio, to fully contain within the output dimension(s).</p>
-          <p>Output may be smaller on one dimension than requested.</p>
-          <p>"contain" will upscale if necessary, where "scale-down" will only reduce size.</p>
         </div>
         <div>
-          <p>"cover"</p>
+          <p>300x300</p>
           <div class="sq">
-            <img src="/cdn-cgi/image/width=500,height=500,fit=cover/img/horiz.jpg" />
+            <img src="/cdn-cgi/image/width=300,height=300,fit=crop/img/horiz.jpg" />
           </div>
-          <p>Scales, maintaining aspect ratio, to fully cover the output dimenisons, then crops the remaining area.</p>
-          <p>Thus the processed output will always match both provided dimensions.</p>
+        </div>
+        <div>
+          <p>200x300</p>
+          <div class="sq">
+            <img src="/cdn-cgi/image/width=200,height=300,fit=crop/img/horiz.jpg" />
+          </div>
         </div>
       </div>
 
