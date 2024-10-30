@@ -1,0 +1,48 @@
+main {
+  max-width: 100%;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+.narrow {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+li ul {
+  margin-bottom: 0;
+  margin-top: 0.25em;
+}
+
+.sq, .h, .v {
+  background-color: white;
+  box-shadow: 0px 0px 1px #000;
+}
+
+.sq, .h {
+  position: relative;
+  width: 100%;
+  height: 0;
+}
+
+.sq { padding-bottom: 100%; }
+.h { padding-bottom: 33.333%; }
+.v {
+  position: relative;
+  width: 120px;
+  height: 360px;
+  margin: 0 auto;
+}
+
+.sq > img,
+.h > img,
+.v > img {
+  max-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
