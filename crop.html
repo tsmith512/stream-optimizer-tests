@@ -56,6 +56,8 @@
 
       <h3>Crop samples</h3>
 
+      <p>Here, the variants are smaller than the original. But "crop" is acting like "cover".</p>
+
       <div class="grid">
         <div>
           <p>750x500</p>
@@ -78,6 +80,8 @@
       </div>
 
       <hr />
+
+      <p>These variants are larger in one or both dimensions.</p>
 
       <div class="grid">
         <div>
@@ -106,8 +110,8 @@
   </main>
 
   <script>
-    document.addEventListener('load', () => {
-      document.querySelectorAll('img').forEach(el => {
+    document.querySelectorAll('img').forEach(el => {
+      el.addEventListener('load', () => {
         const text = `${el.naturalWidth}x${el.naturalHeight}`;
         const label = document.createElement('span');
         label.innerText = text;
