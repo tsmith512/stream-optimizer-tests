@@ -8,6 +8,17 @@
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
   <link rel="stylesheet" href="/style.css" type="text/css" />
+  <style>
+    img + span {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background: white;
+      padding: 2px;
+      transform: translate(-50%, -50%);
+    }
+  </style>
 </head>
 <body>
   <main class="container">
@@ -47,7 +58,7 @@
 
       <div class="grid">
         <div>
-          <p>750x250</p>
+          <p>750x500</p>
           <div class="sq">
             <img src="/cdn-cgi/image/width=750,height=500,fit=crop/img/horiz.jpg" />
           </div>
@@ -65,6 +76,8 @@
           </div>
         </div>
       </div>
+
+      <hr />
 
       <div class="grid">
         <div>
@@ -89,139 +102,18 @@
           <p>This output is narrower but taller than the input.</p>
         </div>
       </div>
-
-      <h3>Vertical Output</h3>
-
-      <div class="grid">
-        <div>
-          "scale-down"
-          <div class="v">
-            <img src="/cdn-cgi/image/width=300,height=900,fit=scale-down/img/horiz.jpg" />
-          </div>
-          <p>
-          </p>
-        </div>
-        <div>
-          "cover"
-          <div class="v">
-            <img src="/cdn-cgi/image/width=300,height=900,fit=cover/img/horiz.jpg" />
-          </div>
-          <p>
-          </p>
-        </div>
-      </div>
-    </article>
-
-    <article class="narrow">
-      <hgroup>
-        <h2>Vertical Input</h2>
-      </hgroup>
-
-      <img src="/img/vert.jpg" />
-
-      <hr />
-
-      <h3>Square Output</h3>
-
-      <div class="grid">
-        <div>
-          "scale-down"
-          <div class="sq">
-            <img src="/cdn-cgi/image/width=500,height=500,fit=scale-down/img/vert.jpg" />
-          </div>
-          <p>
-          </p>
-        </div>
-        <div>
-          "cover"
-          <div class="sq">
-            <img src="/cdn-cgi/image/width=500,height=500,fit=cover/img/vert.jpg" />
-          </div>
-          <p>
-          </p>
-        </div>
-      </div>
-
-      <h3>Horizontal Output</h3>
-
-      <div class="grid">
-        <div>
-          "scale-down"
-          <div class="h">
-            <img src="/cdn-cgi/image/width=900,height=300,fit=scale-down/img/vert.jpg" />
-          </div>
-          <p>
-          </p>
-        </div>
-        <div>
-          "cover"
-          <div class="h">
-            <img src="/cdn-cgi/image/width=900,height=300,fit=cover/img/vert.jpg" />
-          </div>
-          <p>
-          </p>
-        </div>
-      </div>
-
-    </article>
-
-    <article>
-      <hgroup>
-        <h2>Notes and Next Steps</h2>
-        <p>Clarifications and how to finish out Milestone 1's transformation flags</p>
-      </hgroup>
-
-      <h3>Clarifications</h3>
-
-      <ul>
-        <li><strong>Image Resizing does not offer any mechanism to stretch the input.</strong> We should mirror this.</li>
-        <li>Special fit options:
-          <ul>
-            <li>"crop" acts like "cover" but it will not upscale, so it behaves like "scale-down" for larger images.</li>
-            <li>"pad" acts like "scale-down" then applies a letterbox background background.</li>
-          </ul>
-        </li>
-        <li>Other noteworthy options:
-          <ul>
-            <li>"gravity" anchors any cropping to center on a focus area either by automatic detection or coordinates.</li>
-            <li>"trim" allows cropping by specifying offsets from each edge.</li>
-          </ul>
-        </li>
-      </ul>
-
-      <h3>Next Steps</h3>
-
-      <ol>
-        <li>Eliminate "clip". It was never defined and the term is already overloaded in our ecosystem.</li>
-        <li>Rename "crop" to "cover" and confirm behavior &mdash; this seems to be what crop is alerady doing.</li>
-        <li>Rename "scale" to "contain" and avoid stretching output content</li>
-        <li>Lower priority asks:
-          <ul>
-            <li>Add "scale-down" to "contain" without upscaling.</li>
-            <li>Add "crop" to "cover" without upscaling</li>
-          </ul>
-        </li>
-        <li>Out of scope:
-          <ul>
-            <li>Not now:
-              <ul>
-                <li>We will not support "trim" in the initial release.</li>
-                <li>We will not support "gravity" by coordinate weight in the initial release.</li>
-              </ul>
-            </li>
-            <li>Not at all: *
-              <ul>
-                <li>We will not support "pad" at all.</li>
-                <li>We will not support "gravity" by automatic or tracking selection.</li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ol>
-
-      <p><small><em>* You know how this goes. But not without a key account.</em></small></p>
-
     </article>
   </main>
+
+  <script>
+    document.addEventListener('load', () => {
+      document.querySelectorAll('img').forEach(el => {
+        const text = `${el.naturalWidth}x${el.naturalHeight}`;
+        const label = document.createElement('span');
+        label.innerText = text;
+        el.after(label);
+      });
+    });
+  </script>
 </body>
 </html>
