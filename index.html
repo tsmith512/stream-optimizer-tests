@@ -22,7 +22,7 @@
       </ul>
     </nav>
 
-    <h1>Fancy Product Videos</h1>
+    <h1>Mock Product Videos</h1>
 
     <article>
       <hgroup>
@@ -76,16 +76,17 @@
 
       <div class="grid">
         <div>
-          <img src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=frame,time=7s,width=500,height=500,fit=clip/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/journal.mp4" />
-          <p>"Clip" scales to maintain aspect ratio, contained within the provided dimensions.</p>
+          <img src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=frame,time=7s,width=500,height=500,fit=scale-down/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/journal.mp4" />
+          <p>"scale-down" scales to maintain aspect ratio, containing the entire input video within the provided output dimensions.</p>
+          <p>"contain" is similar, but will also upscale to maximize the fit.</p>
+        </div>
+        <div>
+          <img src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=frame,time=7s,width=500,height=500,fit=cover/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/journal.mp4" />
+          <p>"cover" scales to maintain aspect ratio to completely cover the output dimensions, then crops any overflow.</p>
         </div>
         <div>
           <img src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=frame,time=7s,width=500,height=500,fit=crop/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/journal.mp4" />
-          <p>"Crop" scales to maintain aspect ratio to cover, then crops.</p>
-        </div>
-        <div>
-          <img src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=frame,time=7s,width=500,height=500,fit=scale/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/journal.mp4" />
-          <p>"Scale" resizes to fit provided bounds, regardless of input ratio.</p>
+          <p><em>"crop" is still in development</em></p>
         </div>
       </div>
     </article>
@@ -100,13 +101,13 @@
       <div class="grid">
         <div>
           <video controls>
-            <source src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=video,time=5s,duration=5s,width=500,height=500,fit=crop,audio=false/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/journal.mp4" />
+            <source src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=video,time=5s,duration=5s,width=500,height=500,fit=cover,audio=false/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/journal.mp4" />
           </video>
           <p>5 second, square video, without audio</p>
         </div>
         <div>
           <video controls>
-            <source src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=video,time=5s,duration=5s,width=500,height=1000,fit=crop,audio=true/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/journal.mp4" />
+            <source src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=video,time=5s,duration=5s,width=500,height=1000,fit=cover,audio=true/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/journal.mp4" />
           </video>
           <p>5 second, vertical video, with audio</p>
         </div>
@@ -154,16 +155,16 @@
 
       <div class="grid">
         <div>
-          <img src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=frame,time=7s,width=500,height=500,fit=clip/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/coffee.mp4" />
-          <p>"Clip" scales to maintain aspect ratio, contained within the provided dimensions.</p>
+          <img src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=frame,time=7s,width=500,height=500,fit=scale-down/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/coffee.mp4" />
+          <p>"scale-down" scales to maintain aspect ratio, containing the entire input video within the provided output dimensions.</p>
+        </div>
+        <div>
+          <img src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=frame,time=7s,width=500,height=500,fit=cover/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/coffee.mp4" />
+          <p>"cover" scales to maintain aspect ratio to completely cover the output dimensions, then crops any overflow.</p>
         </div>
         <div>
           <img src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=frame,time=7s,width=500,height=500,fit=crop/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/coffee.mp4" />
-          <p>"Crop" scales to maintain aspect ratio to cover, then crops.</p>
-        </div>
-        <div>
-          <img src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=frame,time=7s,width=500,height=500,fit=scale/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/coffee.mp4" />
-          <p>"Scale" resizes to fit provided bounds, regardless of input ratio.</p>
+          <p><em>"crop" is still in development</em></p>
         </div>
       </div>
     </article>
@@ -178,13 +179,13 @@
       <div class="grid">
         <div>
           <video controls>
-            <source src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=video,time=5s,duration=5s,width=500,height=500,fit=crop,audio=false/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/coffee.mp4" />
+            <source src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=video,time=5s,duration=5s,width=500,height=500,fit=cover,audio=false/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/coffee.mp4" />
           </video>
           <p>5 second, square video, without audio</p>
         </div>
         <div>
           <video controls>
-            <source src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=video,time=5s,duration=5s,width=500,height=1000,fit=crop,audio=true/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/coffee.mp4" />
+            <source src="https://customer-93exyed496srpmo4.staging.cloudflarestream.com/media/mode=video,time=5s,duration=5s,width=500,height=1000,fit=cover,audio=true/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/coffee.mp4" />
           </video>
           <p>5 second, vertical video, with audio</p>
         </div>
