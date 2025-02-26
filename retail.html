@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case: Sports</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+  <link rel="stylesheet" href="/style.css" type="text/css" />
+</head>
+<body>
+  <main class="container">
+    <nav>
+      <ul>
+        <li><strong>Transformations Scratchwork</strong></li>
+      </ul>
+      <ul>
+        <li><a href="/">Alpha</a></li>
+        <li><a href="/fit">Image Fit</a></li>
+        <li><a href="/savemyplay">Case: Sports</a></li>
+        <li><a href="/retail">Case: Retail</a></li>
+      </ul>
+    </nav>
+
+    <h1>Product Showcase</h1>
+
+    <article>
+      <hgroup>
+        <h2>Overview</h2>
+      </hgroup>
+    </article>
+
+    <article>
+      <header>
+        <hgroup>
+          <h2>Drawer Unit</h2>
+        </hgroup>
+      </header>
+
+      <video controls>
+        <source src="https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/i/web_MALM_3x4.mp4" />
+      </video>
+
+    </article>
+
+    <h3>Outputs</h3>
+
+    <article>
+      <header>
+        <hgroup>
+          <h4>Optimized</h4>
+          <p>With defaults</p>
+        </hgroup>
+      </header>
+      <video controls>
+        <source src="https://customer-igynxd2rwhmuoxw8.cloudflarestream.com/media//https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/i/web_MALM_3x4.mp4" />
+      </video>
+    </article>
+
+
+    <article>
+      <header>
+        <hgroup>
+          <h4>Still Frames</h4>
+        </hgroup>
+      </header>
+
+      <div class="grid">
+        <div>
+          <img src="https://customer-igynxd2rwhmuoxw8.cloudflarestream.com/media/mode=frame,time=7s,width=500,height=500,fit=scale-down/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/i/web_MALM_3x4.mp4" />
+          <p>"scale-down" scales to maintain aspect ratio, containing the entire input video within the provided output dimensions.</p>
+          <p>"contain" is similar, but will also upscale to maximize the fit.</p>
+        </div>
+        <div>
+          <img src="https://customer-igynxd2rwhmuoxw8.cloudflarestream.com/media/mode=frame,time=7s,width=500,height=500,fit=cover/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/i/web_MALM_3x4.mp4" />
+          <p>"cover" scales to maintain aspect ratio to completely cover the output dimensions, then crops any overflow.</p>
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <header>
+        <hgroup>
+          <h4>Transformed Videos</h4>
+        </hgroup>
+      </header>
+      <div class="grid">
+        <div>
+          <video controls>
+            <source src="https://customer-igynxd2rwhmuoxw8.cloudflarestream.com/media/mode=video,time=5s,duration=5s,width=500,height=500,fit=cover,audio=false/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/i/web_MALM_3x4.mp4" />
+          </video>
+          <p>5 second, square video, without audio</p>
+        </div>
+        <div>
+          <video controls>
+            <source src="https://customer-igynxd2rwhmuoxw8.cloudflarestream.com/media/mode=video,time=5s,duration=5s,width=500,height=1000,fit=cover,audio=true/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/i/web_MALM_3x4.mp4" />
+          </video>
+          <p>5 second, vertical video, with audio</p>
+        </div>
+      </div>
+
+    </article>
+
+    <hr />
+
+
+
+
+  </main>
+</body>
+</html>
