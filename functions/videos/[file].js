@@ -17,5 +17,5 @@ export async function onRequest(context) {
   // Reconstruct Media Transformations URL
   const dest = `${url.origin}/cdn-cgi/media/width=${width}/${storage}/${file.join('/')}`;
 
-  return fetch(dest);
+  return await fetch(dest);
 }
