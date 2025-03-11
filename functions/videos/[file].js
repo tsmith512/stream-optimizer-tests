@@ -8,7 +8,6 @@ export async function onRequest(context) {
 
   // Remove the first slash and the "videos" prefix
   const file = url.pathname.substring(1).split('/');
-  console.log(file)
   file.shift();
 
   // Get width from query param or use default
@@ -16,6 +15,7 @@ export async function onRequest(context) {
 
   // Reconstruct Media Transformations URL
   const dest = `${url.origin}/cdn-cgi/media/width=${width}/${storage}/${file.join('/')}`;
+  console.log(dest)
 
-  return await fetch(dest);
+  return fetch(dest);
 }
