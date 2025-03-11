@@ -24,7 +24,7 @@ export async function onRequest(context) {
   // But this doesn't work:
   return fetch(`https://scratchwork.tsmith.net/trace`, {
     "headers": {
-      "Cf-Trace-Id": "001310100320cc34:1310100320cc34:0:3:1741728117:5f77df12b0ae2d8c5686988b947bdf41bf7969505e4c534dae37fe1124c7b3ae",
+      "Cf-Trace-Id": "001b42ad93a266b2:1b42ad93a266b2:0:3:1741728203:f7812cb78461f911e9e87f6ebfd29ffbfa751cbc0e5712ea6f61a69f4455fad7",
     }
   });
 }
