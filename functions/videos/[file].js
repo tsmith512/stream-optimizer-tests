@@ -22,9 +22,9 @@ export async function onRequest(context) {
   // generates the URL https://scratchwork.tsmith.net/cdn-cgi/media/width=300/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/journal.mp4
   // Which I can hit directly
   // But this doesn't work:
-  return fetch(`https://scratchwork.tsmith.net/trace`, {
+  return fetch(`https://scratchwork.tsmith.net/cdn-cgi/trace`, {
     "headers": {
-      "Cf-Trace-Id": "001b42ad93a266b2:1b42ad93a266b2:0:3:1741728203:f7812cb78461f911e9e87f6ebfd29ffbfa751cbc0e5712ea6f61a69f4455fad7",
+      "Cf-Trace-Id": "000e90ee8d84ae64:e90ee8d84ae64:0:3:1741728367:7fdb4824f2ff8be7c3fd2da23a302c2b84041690c37859ebc97cad5f1c4e59ed",
     }
   });
 }
