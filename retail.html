@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Case: Sports</title>
+  <title>Case: Retail</title>
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
@@ -23,12 +23,20 @@
       </ul>
     </nav>
 
-    <h1>Product Showcase</h1>
+    <h1>Sample Videos</h1>
 
     <article>
       <hgroup>
         <h2>Overview</h2>
       </hgroup>
+      <form>
+        <select name="file" id="file">
+          <option value="">Select a Video</option>
+          <option value="https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/i/web_MALM_3x4.mp4"> 8MB - web_MALM_3x4.mp4</option>
+          <option value="https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/i/1432941_fe003565.mp4">159MB - 1432941_fe003565.mp4</option>
+          <option value="https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/i/Com25_PCAC_RAC-Bedroom-L1_ULLVIDE_23s_3x4.mp4">226MB - Com25_PCAC_RAC-Bedroom-L1_ULLVIDE_23s_3x4.mp4</option>
+        </select>
+      </form>
     </article>
 
     <article>
@@ -38,8 +46,7 @@
         </hgroup>
       </header>
 
-      <video controls>
-        <source src="https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/i/web_MALM_3x4.mp4" />
+      <video id="original" controls>
       </video>
 
     </article>
@@ -50,11 +57,9 @@
       <header>
         <hgroup>
           <h4>Optimized</h4>
-          <p>With defaults</p>
         </hgroup>
       </header>
-      <video controls>
-        <source src="https://scratchwork.tsmith.net/cdn-cgi/media//https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/i/web_MALM_3x4.mp4" />
+      <video id="variant" controls>
       </video>
     </article>
 
@@ -68,13 +73,10 @@
 
       <div class="grid">
         <div>
-          <img src="https://scratchwork.tsmith.net/cdn-cgi/media/mode=frame,time=7s,width=400,height=400,fit=scale-down/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/i/web_MALM_3x4.mp4" />
-          <p>"scale-down" scales to maintain aspect ratio, containing the entire input video within the provided output dimensions.</p>
-          <p>"contain" is similar, but will also upscale to maximize the fit.</p>
+          <img id="imgA" />
         </div>
         <div>
-          <img src="https://scratchwork.tsmith.net/cdn-cgi/media/mode=frame,time=7s,width=400,height=400,fit=cover/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/i/web_MALM_3x4.mp4" />
-          <p>"cover" scales to maintain aspect ratio to completely cover the output dimensions, then crops any overflow.</p>
+          <img id="imgB" />
         </div>
       </div>
     </article>
@@ -87,26 +89,63 @@
       </header>
       <div class="grid">
         <div>
-          <video controls>
-            <source src="https://scratchwork.tsmith.net/cdn-cgi/media/mode=video,time=5s,duration=5s,width=500,height=500,fit=cover,audio=false/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/i/web_MALM_3x4.mp4" />
+          <video id="square" controls>
           </video>
-          <p>5 second, square video, without audio</p>
         </div>
         <div>
-          <video controls>
-            <source src="https://scratchwork.tsmith.net/cdn-cgi/media/mode=video,time=5s,duration=5s,width=500,height=1000,fit=cover,audio=true/https://pub-9cf4bfca6e924401bd4ac87ca9174da6.r2.dev/i/web_MALM_3x4.mp4" />
+          <video id="vert" controls>
           </video>
-          <p>5 second, vertical video, with audio</p>
         </div>
       </div>
 
     </article>
-
     <hr />
-
-
-
-
   </main>
+  <script>
+    fileEl = document.getElementById('file');
+    originalEl = document.getElementById('original');
+    variantEl = document.getElementById('variant');
+    imgAEl = document.getElementById('imgA');
+    imgBEl = document.getElementById('imgB');
+    squareEl = document.getElementById('square');
+    vertEl = document.getElementById('vert');
+
+    const makeUrl = (url, options) => {
+      if (options) {
+        return `/cdn-cgi/media/${options}/${url}`;
+      } else {
+        return url;
+      }
+
+    };
+
+    const makeSource = (url, options) => {
+      const source = document.createElement('source');
+      source.setAttribute('src', makeUrl(url, options));
+      return source;
+    };
+
+    fileEl.addEventListener('change', e => {
+      e.preventDefault();
+      document.querySelectorAll('video').forEach(v => v.innerHTML = null);
+      document.querySelectorAll('img').forEach(i => i.setAttribute('src', null));
+
+      if (! fileEl.selectedOptions[0].value) {
+        return;
+      }
+
+      const url = fileEl.selectedOptions[0].value;
+
+      originalEl.appendChild(makeSource(url, null));
+      variantEl.appendChild(makeSource(url, 'duration=5m,width=720'));
+      squareEl.appendChild(makeSource(url, 'duration=5m,width=480,height=480,fit=cover'));
+      vertEl.appendChild(makeSource(url, 'duration=5m,width=480,height=720,fit=cover'));
+      document.querySelectorAll('video').forEach(v => v.load());
+
+      imgAEl.setAttribute('src', makeUrl(url, 'mode=frame,time=10s,width=480,format=jpg'));
+      imgBEl.setAttribute('src', makeUrl(url, 'mode=frame,time=10s,width=480,height=480,fit=cover,format=jpg'));
+
+    });
+  </script>
 </body>
 </html>
